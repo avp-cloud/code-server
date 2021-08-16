@@ -1,5 +1,5 @@
 tag: latest
 replicaCount: 1
 persistence:
-  enabled: false
+  enabled: true
   size: 3Gi
