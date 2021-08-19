@@ -1,4 +1,6 @@
-tag: latest
+registry: ghcr.io
+repository: avp-cloud/code-server
+tag: main
 replicaCount: 1
 persistence:
   enabled: true

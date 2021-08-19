@@ -5,8 +5,8 @@ FROM ghcr.io/linuxserver/code-server:version-v3.11.1
 RUN apt update && apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget python3 -y
 
 # Install golang
-RUN curl -LO https://dl.google.com/go/go1.16.4.linux-amd64.tar.gz && tar -xvf go1.16.4.linux-amd64.tar.gz && mv go /usr/local
-ENV GOPATH=$HOME/work
+RUN curl -LO https://dl.google.com/go/go1.17.linux-amd64.tar.gz && tar -xvf go1.17.linux-amd64.tar.gz && mv go /usr/local
+ENV GOPATH=$HOME/src
 ENV PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # Install kubectl and helm

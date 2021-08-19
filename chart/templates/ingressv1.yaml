@@ -16,7 +16,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: code-server
+                name: {{ include "codeserver.fullname" . }}
                 port:
                   number: 80
 {{- end }}

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: code-server
+  name: {{ include "codeserver.fullname" . }}
   labels:
     {{- include "codeserver.labels" . | nindent 4 }}
     app.kubernetes.io/component: code-server
@@ -22,11 +22,11 @@ spec:
       volumes:
         - name: code-config
           persistentVolumeClaim:
-            claimName: code-config
+            claimName:  {{ include "codeserver.fullname" . }}-code-config
       {{- end }}
       containers:
         - name: code-server
-          image: avpc/code-server:{{ .Values.tag }}
+          image: {{ .Values.registry }}/{{ .Values.repository }}:{{ .Values.tag }}
           ports:
             - name: http
               containerPort: 8443

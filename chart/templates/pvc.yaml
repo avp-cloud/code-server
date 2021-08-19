@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: code-config
+  name: {{ include "codeserver.fullname" . }}-code-config
 spec:
   accessModes:
     - ReadWriteOnce
