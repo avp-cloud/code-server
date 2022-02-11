@@ -5,8 +5,13 @@ metadata:
   name: {{ include "codeserver.fullname" . }}
   labels:
     {{- include "codeserver.labels" . | nindent 4 }}
+{{- if .Values.labels }}
+{{ toYaml .Values.labels | indent 4 }}
+{{- end }}
+{{- if .Values.annotations }}
   annotations:
-    {{- include "codeserver.annotations" . | nindent 4 }}
+{{ toYaml .Values.annotations | indent 4 }}
+{{- end }}
 spec:
   rules:
     - http:

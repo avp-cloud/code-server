@@ -5,7 +5,3 @@ replicaCount: 1
 persistence:
   enabled: true
   size: 3Gi
-annotations:
-# Remove the below items if not used with okteto, ignore if you don't care
-  dev.okteto.com/generate-host: "true"
-  dev.okteto.com/private: "true"
