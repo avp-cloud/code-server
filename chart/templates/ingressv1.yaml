@@ -6,8 +6,7 @@ metadata:
   labels:
     {{- include "codeserver.labels" . | nindent 4 }}
   annotations:
-    dev.okteto.com/generate-host: "true"
-    dev.okteto.com/private: "true"
+    {{- include "codeserver.annotations" . | nindent 4 }}
 spec:
   rules:
     - http:

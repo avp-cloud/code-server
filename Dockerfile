@@ -1,5 +1,5 @@
 # Base image, greatful to linuxserver
-FROM ghcr.io/linuxserver/code-server:version-v3.11.1
+FROM ghcr.io/linuxserver/code-server:v4.0.2-ls111
 
 # Install python3
 RUN apt update && apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget python3 -y
