@@ -16,7 +16,7 @@ RUN curl -LO https://raw.githubusercontent.com/ahmetb/kubectx/master/kubens && \
 
 # kubectx
 RUN curl -LO https://raw.githubusercontent.com/ahmetb/kubectx/master/kubectx && \
-    mv kubens /usr/bin/kubectx && chmod +x /usr/bin/kubectx
+    mv kubectx /usr/bin/kubectx && chmod +x /usr/bin/kubectx
 
 # helm
 RUN curl -LO https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.gz && \
