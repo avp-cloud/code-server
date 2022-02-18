@@ -1,8 +1,8 @@
 # Base image, greatful to linuxserver
 FROM ghcr.io/linuxserver/code-server:v4.0.2-ls111
 
-RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y ca-certificates curl wget socat openssh-client iputils-ping vim nano && \
+RUN apt-get update && apt-get install -y && \
+    ca-certificates curl wget socat openssh-client iputils-ping vim nano && \
     build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev python3 && \
     rm -r /var/lib/apt/lists /var/cache/apt/archives
 
