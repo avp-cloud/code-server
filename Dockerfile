@@ -3,7 +3,7 @@ FROM ghcr.io/linuxserver/code-server:v4.0.2-ls111
 
 # Install python3
 RUN apt update && apt install -y  && \
-    build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev openssh-client iputils-ping vim nano python3 -y
+    zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev openssh-client iputils-ping vim nano python3 -y
 
 # Install golang
 RUN curl -LO https://dl.google.com/go/go1.17.linux-amd64.tar.gz && tar -xvf go1.17.linux-amd64.tar.gz && mv go /usr/local
