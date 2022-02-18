@@ -1,11 +1,6 @@
 # Base image, greatful to linuxserver
 FROM ghcr.io/linuxserver/code-server:v4.0.2-ls111
 
-# Install python3 and utils
-RUN apt update && apt install -y && \
-  build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev && \
-  wget python3 socat
-
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y ca-certificates curl wget socat openssh-client iputils-ping vim nano && \
     build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev python3 && \
