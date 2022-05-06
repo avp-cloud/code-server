@@ -1,10 +1,13 @@
 # Base image, greatful to linuxserver
-FROM ghcr.io/linuxserver/code-server:v4.0.2-ls111
+FROM ghcr.io/linuxserver/code-server:v4.3.0
 
 # Install golang
 RUN curl -LO https://dl.google.com/go/go1.17.linux-amd64.tar.gz && tar -xvf go1.17.linux-amd64.tar.gz && mv go /usr/local
 ENV GOPATH=$HOME/src
 ENV PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
+# docker cli, use dind container side-by-side to consume
+COPY --from=docker:dind /usr/local/bin/docker /usr/local/bin/
 
 # kubectl
 RUN curl -LO https://dl.k8s.io/release/v1.23.0/bin/linux/amd64/kubectl && \
