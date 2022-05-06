@@ -1,5 +1,5 @@
 # Base image, greatful to linuxserver
-FROM ghcr.io/linuxserver/code-server:v4.3.0
+FROM ghcr.io/linuxserver/code-server:4.3.0
 
 # Install golang
 RUN curl -LO https://dl.google.com/go/go1.17.linux-amd64.tar.gz && tar -xvf go1.17.linux-amd64.tar.gz && mv go /usr/local
