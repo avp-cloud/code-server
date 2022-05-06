@@ -7,7 +7,7 @@ ENV GOPATH=$HOME/src
 ENV PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # docker cli, use dind container side-by-side to consume
-COPY --from=docker:dind /usr/local/bin/docker /usr/local/bin/
+COPY --from=docker:dind /usr/local/bin/docker /usr/bin/docker
 
 # kubectl
 RUN curl -LO https://dl.k8s.io/release/v1.23.0/bin/linux/amd64/kubectl && \
