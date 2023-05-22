@@ -1,8 +1,8 @@
 # Base image, greatful to linuxserver
-FROM ghcr.io/linuxserver/code-server:4.3.0
+FROM ghcr.io/linuxserver/code-server:4.13.0
 
 # Install golang
-RUN curl -LO https://dl.google.com/go/go1.17.linux-amd64.tar.gz && tar -xvf go1.17.linux-amd64.tar.gz && mv go /usr/local
+RUN curl -LO https://dl.google.com/go/go1.19.linux-amd64.tar.gz && tar -xvf go1.19.linux-amd64.tar.gz && mv go /usr/local
 ENV GOPATH=$HOME/src
 ENV PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
@@ -10,7 +10,7 @@ ENV PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 COPY --from=docker:dind /usr/local/bin/docker /usr/bin/docker
 
 # kubectl
-RUN curl -LO https://dl.k8s.io/release/v1.23.0/bin/linux/amd64/kubectl && \
+RUN curl -LO https://dl.k8s.io/release/v1.24.0/bin/linux/amd64/kubectl && \
     mv kubectl /usr/bin/kubectl && chmod +x /usr/bin/kubectl
 
 # kubens
@@ -29,7 +29,7 @@ RUN curl -LO https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.gz && \
     rm -rf helm-v3.8.0-linux-amd64.tar.gz linux-amd64
 
 # k9s
-RUN curl -LO https://github.com/derailed/k9s/releases/download/v0.25.18/k9s_Linux_x86_64.tar.gz && \
+RUN curl -LO https://github.com/derailed/k9s/releases/download/v0.27.4/k9s_Linux_x86_64.tar.gz && \
     tar -xvf k9s_Linux_x86_64.tar.gz && \
     rm k9s_Linux_x86_64.tar.gz && \
     mv /k9s /usr/bin && \
