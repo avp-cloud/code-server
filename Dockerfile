@@ -30,8 +30,8 @@ RUN curl -LO https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.gz && \
 
 # k9s
 RUN curl -LO https://github.com/derailed/k9s/releases/download/v0.27.4/k9s_Linux_amd64.tar.gz && \
-    tar -xvf k9s_Linux_x86_64.tar.gz && \
-    rm k9s_Linux_x86_64.tar.gz && \
+    tar -xvf k9s_Linux_amd64.tar.gz && \
+    rm k9s_Linux_amd64.tar.gz && \
     mv /k9s /usr/bin && \
     chmod +x /usr/bin/k9s
 
