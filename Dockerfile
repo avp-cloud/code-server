@@ -1,8 +1,8 @@
 # Base image, greatful to linuxserver
-FROM ghcr.io/linuxserver/code-server:4.13.0
+FROM ghcr.io/linuxserver/code-server:4.15.0
 
 # Install golang
-RUN curl -LO https://dl.google.com/go/go1.19.linux-amd64.tar.gz && tar -xvf go1.19.linux-amd64.tar.gz && mv go /usr/local
+RUN curl -LO https://dl.google.com/go/go1.20.linux-amd64.tar.gz && tar -xvf go1.20.linux-amd64.tar.gz && mv go /usr/local
 ENV GOPATH=$HOME/src
 ENV PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
