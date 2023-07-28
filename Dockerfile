@@ -13,10 +13,12 @@ COPY --from=docker:dind /usr/local/bin/docker /usr/bin/docker
 RUN curl -LO https://dl.k8s.io/release/v1.27.2/bin/linux/amd64/kubectl && \
     mv kubectl /usr/bin/kubectl && chmod +x /usr/bin/kubectl
 
-# buildkit cli for kubectl
-RUN curl -LO https://github.com/vmware-tanzu/buildkit-cli-for-kubectl/releases/download/v0.1.6/linux-v0.1.6.tgz && \
-    tar -C /usr/bin -xvf linux-v0.1.6.tgz && \
-    rm -rf linux-v0.1.6.tgz
+# buildkit tools
+RUN -LO https://github.com/moby/buildkit/releases/download/v0.12.0/buildkit-
+v0.12.0.linux-amd64.tar.gz && \
+    tar -xvf v0.12.0.linux-amd64.tar.gz && \
+    rm -rf v0.12.0.linux-amd64.tar.gz && \
+    mv bin/* /usr/bin/
 
 # kubens
 RUN curl -LO https://raw.githubusercontent.com/ahmetb/kubectx/master/kubens && \
